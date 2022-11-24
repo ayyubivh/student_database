@@ -142,7 +142,7 @@ class _EditPage extends State<EditPage> {
             divider,
             elevatedbutton(
               buttoncolor: Colors.teal,
-              mytext: 'savee',
+              mytext: 'save',
               myicon: const Icon(Icons.save_alt),
               onpress: () {
                 onAddStudentButtonClicked(widget.index);

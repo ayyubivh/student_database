@@ -106,60 +106,46 @@ class _EditPage extends State<EditPage> {
   );
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        //   borderRadius: BorderRadius.circular(15),
-        gradient: LinearGradient(
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-          colors: [
-            Color.fromARGB(255, 16, 16, 17),
-            Color.fromARGB(255, 47, 184, 234)
-          ],
-        ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          children: [
-            const SizedBox(height: 80),
-            Column(
-              children: [
-                circleavatar(),
-                position(),
-              ],
-            ),
-            textform(
-                mycontroller: _nameController,
-                hintname: widget.passValue1.name),
-            divider,
-            textform(
-                mycontroller: _ageController, hintname: widget.passValue1.age),
-            divider,
-            textform(
-                mycontroller: _numberController,
-                hintname: widget.passValue1.number),
-            divider,
-            elevatedbutton(
-              buttoncolor: Colors.teal,
-              mytext: 'save',
-              myicon: const Icon(Icons.save_alt),
-              onpress: () {
-                onAddStudentButtonClicked(widget.index);
-                Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(builder: (ctx) => const ScreenHome()),
-                    (route) => false);
-              },
-            ),
-            const SizedBox(height: 30),
-            elevatedbutton(
-              buttoncolor: Colors.red,
-              mytext: 'Exit',
-              myicon: const Icon(Icons.exit_to_app),
-              onpress: () => Navigator.pop(context),
-            )
-          ],
-        ),
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Column(
+        children: [
+          const SizedBox(height: 80),
+          Column(
+            children: [
+              circleavatar(),
+              position(),
+            ],
+          ),
+          textform(
+              mycontroller: _nameController, hintname: widget.passValue1.name),
+          divider,
+          textform(
+              mycontroller: _ageController, hintname: widget.passValue1.age),
+          divider,
+          textform(
+              mycontroller: _numberController,
+              hintname: widget.passValue1.number),
+          divider,
+          elevatedbutton(
+            buttoncolor: Colors.teal,
+            mytext: 'save',
+            myicon: const Icon(Icons.save_alt),
+            onpress: () {
+              onAddStudentButtonClicked(widget.index);
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (ctx) => const ScreenHome()),
+                  (route) => false);
+            },
+          ),
+          const SizedBox(height: 30),
+          elevatedbutton(
+            buttoncolor: Colors.red,
+            mytext: 'Exit',
+            myicon: const Icon(Icons.exit_to_app),
+            onpress: () => Navigator.pop(context),
+          )
+        ],
       ),
     );
   }

@@ -40,11 +40,11 @@ class _AddStudentWidgetState extends State<AddStudentWidget> {
           shadowColor: Colors.black,
           color: Colors.transparent,
           borderRadius: BorderRadius.circular(30),
-          child: TextField(
+          child: TextFormField(
             textAlignVertical: TextAlignVertical.bottom,
             controller: mycontroller,
             decoration: InputDecoration(
-              enabledBorder: OutlineInputBorder(
+              border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(80),
                   borderSide: BorderSide.none),
               filled: true,
@@ -85,7 +85,7 @@ class _AddStudentWidgetState extends State<AddStudentWidget> {
         },
         child: const Icon(
           Icons.camera_alt,
-          color: Colors.white,
+          color: Colors.grey,
         ),
       ),
     );
@@ -108,16 +108,16 @@ class _AddStudentWidgetState extends State<AddStudentWidget> {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        //   borderRadius: BorderRadius.circular(15),
-        gradient: LinearGradient(
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-          colors: [
-            Color.fromARGB(255, 16, 16, 17),
-            Color.fromARGB(255, 47, 184, 234)
-          ],
-        ),
-      ),
+          //   borderRadius: BorderRadius.circular(15),
+          // gradient: LinearGradient(
+          //   begin: Alignment.bottomLeft,
+          //   end: Alignment.topRight,
+          //   colors: [
+          //     Color.fromARGB(255, 16, 16, 17),
+          //     Color.fromARGB(255, 47, 184, 234)
+          //   ],
+          // ),
+          ),
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Form(

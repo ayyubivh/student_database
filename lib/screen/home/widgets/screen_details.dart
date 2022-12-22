@@ -19,7 +19,7 @@ class ScreenDetails extends StatelessWidget {
   Widget text({required String myname}) {
     return Text(
       myname,
-      style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+      style: const TextStyle(fontSize: 23, fontWeight: FontWeight.w400),
     );
   }
 
@@ -30,16 +30,7 @@ class ScreenDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Color.fromARGB(255, 16, 16, 17),
-                Color.fromARGB(255, 47, 184, 234)
-              ],
-            ),
-          ),
-        ),
+        backgroundColor: Colors.black,
         title: const Text('Details'),
       ),
       body: Form(
@@ -67,6 +58,7 @@ class ScreenDetails extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.black,
         onPressed: () {
           _showForm(context, passvalue, passindex);
         },

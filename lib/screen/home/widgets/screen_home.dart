@@ -15,17 +15,8 @@ class ScreenHome extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: const Text('Home page'),
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Color.fromARGB(255, 16, 16, 17),
-                Color.fromARGB(255, 47, 184, 234)
-              ],
-            ),
-          ),
-        ),
         actions: [
           IconButton(
             icon: const Icon(
@@ -44,6 +35,7 @@ class ScreenHome extends StatelessWidget {
       ),
       body: ListStudentWidget(),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.black,
         onPressed: () {
           _showForm(context, null, null);
         },

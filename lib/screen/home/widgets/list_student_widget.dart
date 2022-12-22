@@ -18,42 +18,44 @@ class ListStudentWidget extends StatelessWidget {
       builder:
           (BuildContext ctx, List<StudentModel> studentList, Widget? child) {
         return Container(
-          color: Colors.grey.shade300,
-          child: ListView.separated(
+          color: Colors.grey[300],
+          child: ListView.builder(
             itemBuilder: (ctx, index) {
               final data = studentList[index];
-              return Card(
-                elevation: 5,
-                shadowColor: Color.fromARGB(255, 148, 169, 164),
-                child: ListTile(
-                  visualDensity:
-                      const VisualDensity(horizontal: 0, vertical: 0.9),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              ScreenDetails(passvalue: data, passindex: index),
-                        ));
-                  },
-                  leading: CircleAvatar(
-                    backgroundImage: FileImage(File(data.image)),
+              return Padding(
+                padding: const EdgeInsets.all(3.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    color: Colors.white,
                   ),
-                  title: Text(data.name),
-                  trailing: IconButton(
-                    onPressed: () {
-                      deleteStudent(index);
+                  child: ListTile(
+                    visualDensity:
+                        const VisualDensity(horizontal: 0, vertical: 0.9),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ScreenDetails(
+                                passvalue: data, passindex: index),
+                          ));
                     },
-                    icon: const Icon(
-                      Icons.delete_forever,
-                      color: Colors.red,
+                    leading: CircleAvatar(
+                      backgroundImage: FileImage(File(data.image)),
+                    ),
+                    title: Text(data.name),
+                    trailing: IconButton(
+                      onPressed: () {
+                        deleteStudent(index);
+                      },
+                      icon: const Icon(
+                        Icons.delete_forever,
+                        color: Colors.red,
+                      ),
                     ),
                   ),
                 ),
               );
-            },
-            separatorBuilder: (context, index) {
-              return const Divider();
             },
             itemCount: studentList.length,
           ),
